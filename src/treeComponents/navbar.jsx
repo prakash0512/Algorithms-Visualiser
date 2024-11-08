@@ -5,7 +5,7 @@ class Navbar extends Component {
 	render() {
 		return (
 			<nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
-				<span className='navbar-brand'>N Queen</span>
+				<span className='navbar-brand'>Tree Traversals</span>
 				<button
 					className='navbar-toggler'
 					type='button'

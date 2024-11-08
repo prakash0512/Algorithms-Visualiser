@@ -17,14 +17,13 @@ const useStyles = makeStyles((theme) => ({
 
 const SimpleSelect = (props) => {
 	const classes = useStyles();
-	const [age, setAge] = React.useState("0");
-	const [state] = React.useState({
-		pos: props.pos,
-	});
+	const [selectedAlgo, setSelectedAlgo] = React.useState("0");  // Keep track of selected algorithm
+
+	// Handle algorithm change
 	const handleChange = (event) => {
-		console.log(state.pos);
-		setAge(event.target.value);
-		props.onAlgoChanged(state.pos, event.target.value);
+		const value = event.target.value;
+		setSelectedAlgo(value);
+		props.onAlgoChanged(props.pos, value);  // Call the parent function to notify about the algorithm change
 	};
 
 	return (
@@ -34,18 +33,12 @@ const SimpleSelect = (props) => {
 				<Select
 					labelId='demo-simple-select-label'
 					id='demo-simple-select'
-					value={age}
-					onChange={handleChange}
+					value={selectedAlgo}
+					onChange={handleChange}  // Properly trigger algorithm change
 				>
-					<MenuItem value={0} style={{ selected: true }}>
-						Merge Sort
-					</MenuItem>
-					<MenuItem value={1} style={{ selected: true }}>
-						Heap Sort
-					</MenuItem>
-					<MenuItem value={2} style={{ selected: true }}>
-						Quick Sort
-					</MenuItem>
+					<MenuItem value={"0"}>Inorder</MenuItem>
+					<MenuItem value={"1"}>Preorder</MenuItem>
+					<MenuItem value={"2"}>Postorder</MenuItem>
 				</Select>
 			</FormControl>
 		</div>

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './node.css'
+import '.././stylesheets/style.css'
 class Node extends Component {
     static = {
         row: this.props.row,

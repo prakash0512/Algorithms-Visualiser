@@ -4,7 +4,6 @@ export function quickSortRecursive(rects2){
     let rects = rects2.slice();
     values = [];
     let sz = rects2.length;
-    // console.log( "fdsfsd",sz );
     sz = sz-1;
     quick(rects,0,sz);
     return values;
@@ -24,7 +23,6 @@ function getPartition(rects, left, right){
         if( rects[j].width< pivot){
             it++;
             if( it!==j ){
-                // swap(rects[it],rects[j];
                 const rect1 = {...rects[it]};
                 const rect2 = {...rects[j]};
                 rects[it] = rect2;
